@@ -9,7 +9,7 @@ Intefraces Utilizadas:
 AnalizadorDeCadenas.java
 
 Descripcion del programa: El proyecto consiste en seis pequenias 
-actividades en cada una se especifica un tarea en particular.
+actividades en las cuales en cada una se especifica un tarea en particular.
 
 Actividad 1: Crear un metodo no estatico  que permita encontrar la posicion de un 
 caracter dado a partir de un objeto.
