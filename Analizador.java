@@ -1,6 +1,5 @@
 /**
 * @author Eduardo Montaño Gomez
-* Numero de cuenta: 421005183
 * @version 1.0 Noviembre 2020
 * @since ICC laboratorio 2021-1 
 */
@@ -205,6 +204,9 @@ public class Analizador implements AnalizadorDeCadenas{
 		System.out.println(analizador.contiene("Hola mundo", "und"));
 		System.out.println("------------------------------------------");
 		///////////////////////////////////////
+
+		//comentarios de ejemplo en la otra verion de mi proyecto con github
+		// ESTA VERSION TIENE EL COMENTARIO DE ARRIBA ADICIONAL ADEMAS DE QUE NO TIENE NUMERO DE CUENTA
 	}
 
 }//Find de la clase
