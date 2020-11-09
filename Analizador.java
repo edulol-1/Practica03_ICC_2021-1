@@ -1,6 +1,7 @@
 /**
 * @author Eduardo Montaño Gomez
 * @version 1.0 Noviembre 2020
+* NUmero de cuenta: 421005183
 * @since ICC laboratorio 2021-1 
 */
 
@@ -19,6 +20,8 @@ public class Analizador implements AnalizadorDeCadenas{
 				break; //Uso break para que no siga iterando
 			}else { posicion = -1; }
 		}
+		System.out.println("Entrada: " + cadena + ", caracter: " + c + ", " + "primer posicion donde se encuentra: " + posicion);
+		//System.out.println("caracter a buscar: " + c);
 		return posicion;
 	}
 
@@ -67,7 +70,7 @@ public class Analizador implements AnalizadorDeCadenas{
 					break;
 			}
 		}else {numero = false;}
-
+		System.out.println("Entrada: " + cadena + ", ¿Es numero?: " + numero);
 		return numero;
 	}
 
@@ -85,6 +88,7 @@ public class Analizador implements AnalizadorDeCadenas{
 			}
 			i++;//Sumamos 1 a i
 		}
+		System.out.println("Entrada: " + cadena + ", caracter a reemplazar: " + reemplazado + ", caracter remplazador: " + reemplazador + ", salida: " + cadenaModificada);
 		return cadenaModificada;
 	}
 
@@ -122,6 +126,7 @@ public class Analizador implements AnalizadorDeCadenas{
 				}
 			}
 		}
+		System.out.println("Entrada: " + cadena + ", salida: " + sonIguales);
 		return sonIguales;
 	}
 
@@ -154,6 +159,7 @@ public class Analizador implements AnalizadorDeCadenas{
 				}
 			}
 		}
+		System.out.println("Entrada 1: " + cadena + ", entrada 2: " + buscada + ", salida: " + siContiene);
 		return siContiene;
 	}
 
@@ -162,13 +168,15 @@ public class Analizador implements AnalizadorDeCadenas{
 
 
 		////////// ACTIVIDAD 1//////////////////
-		System.out.println("Posicion: " + analizador.encuentraPosicion("Esta es una palabra de prueba”,",'e'));
-		System.out.println("Posicion: " + analizador.encuentraPosicion("Esta es una palabra de prueba”,",'E'));
-		System.out.println("Posicion: " + analizador.encuentraPosicion("Esta es una palabra de prueba”,",'z'));
-		System.out.println("Posicion: " + analizador.encuentraPosicion("Esta es una palabra de prueba”,",'u'));
+		System.out.println("\t\tACTIVIDAD 1" + "\n\n");
+		System.out.println(analizador.encuentraPosicion("Esta es una palabra de prueba”,",'e'));
+		System.out.println(analizador.encuentraPosicion("Esta es una palabra de prueba”,",'E'));
+		System.out.println(analizador.encuentraPosicion("Esta es una palabra de prueba”,",'z'));
+		System.out.println(analizador.encuentraPosicion("Esta es una palabra de prueba”,",'u'));
 		////////////////////////////////////////
 		////////// ACTIVIDAD 2//////////////////
 		System.out.println("------------------------------------------");
+		System.out.println("\t\tACTIVIDAD 2" + "\n\n");
 		System.out.println(analizador.esNumero("Texto"));
 		System.out.println(analizador.esNumero("133"));
 		System.out.println(analizador.esNumero("12.44"));
@@ -177,6 +185,7 @@ public class Analizador implements AnalizadorDeCadenas{
 		System.out.println("------------------------------------------");
 		////////////////////////////////////////
 		///////// ACTIVIDAD 3//////////////////
+		System.out.println("\t\tACTIVIDAD 3" + "\n\n");
 		System.out.println(analizador.reemplazaCaracter("Hola Mundo",'o', 'i'));
 		System.out.println(analizador.reemplazaCaracter("Palabra de prueba",'a', 'o'));
 		System.out.println(analizador.reemplazaCaracter("Palabra de prueba",'P', 'H'));
@@ -187,6 +196,7 @@ public class Analizador implements AnalizadorDeCadenas{
 		///////////////////////////////////////
 		///////// ACTIVIDAD 4//////////////////
 		//System.out.println(analizador.esPalindromo("Anital avalatIna"));
+		System.out.println("\t\tACTIVIDAD 4" + "\n\n");
 		System.out.println(analizador.esPalindromo("oso baboso"));
 		System.out.println(analizador.esPalindromo("o"));
 		System.out.println(analizador.esPalindromo("Anita lava la tina"));
@@ -198,6 +208,7 @@ public class Analizador implements AnalizadorDeCadenas{
 		System.out.println("------------------------------------------");
 		///////////////////////////////////////
 		///////// ACTIVIDAD 5//////////////////
+		System.out.println("\t\tACTIVIDAD 5" + "\n\n");
 		System.out.println(analizador.contiene("Hola mundo", "mundo"));
 		System.out.println(analizador.contiene("Hola mundo", "oso"));
 		System.out.println(analizador.contiene("Hola", "Hola mundo"));
