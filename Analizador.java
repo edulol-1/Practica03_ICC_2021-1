@@ -12,7 +12,7 @@ public class Analizador implements AnalizadorDeCadenas{
     @Override public int encuentraPosicion(String cadena, char c) {
 	// posicion: el contador que se regresa.
 	int posicion = 0;
-	for (char c1 : cadena) {
+	for (char c1 : cadena.toCharArray()) {
 	    // Si el caracter coincide con con el parametro, se regresa esa posicion.
 	    if (c1 == c)
 		return posicion;
@@ -29,13 +29,13 @@ public class Analizador implements AnalizadorDeCadenas{
 	int numPuntos = 0;
 
 	// Usamos for each, para una implementacion mas elegante.
-	for (char caracter : cadena) {
+	for (char caracter : cadena.toCharArray()) {
 	    if (caracter == '.')
 		numPuntos++;
 	}
 	//Valida si es que se han introducido mas de dos puntos
 	if(numPuntos <= 1) {
-	    for(char c : cadena) {
+	    for(char c : cadena.toCharArray()) {
 		switch (c) {
 		case('0'): numero = true;
 		    break;
