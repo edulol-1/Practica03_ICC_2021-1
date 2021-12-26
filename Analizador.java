@@ -33,6 +33,7 @@ public class Analizador implements AnalizadorDeCadenas{
 	    if (caracter == '.')
 		numPuntos++;
 	}
+	
 	//Valida si es que se han introducido mas de dos puntos
 	if(numPuntos <= 1) {
 	    for(char c : cadena.toCharArray()) {
@@ -77,13 +78,14 @@ public class Analizador implements AnalizadorDeCadenas{
 
 	int i = 0;
 	String cadenaModificada = "";//Declaramos una variable para almacenar la cadena modificada
-	while (i<cadena.length()) {
-	    if (cadena.charAt(i) == reemplazado) {//Comparamos el caracter i con el reemplazado
-		cadenaModificada += "" + reemplazador; //Si es cierto, a la cadena modificada le concatenamos el caracter reemplazador
-	    }else {
-		cadenaModificada += "" + cadena.charAt(i);//Si no es igual, le concatenamos el caracter i-esimo de la cadena original
-	    }
-	    i++;//Sumamos 1 a i
+	for (char caracter : cadena.toCharArray()) {
+	    // Comparamos el i-esimo caracter con el remplazado.
+	    if (caracter == reemplazado)
+		// Si coincide con el parametro, agregamos el reemplazo.
+		cadenaModificada += "" + reemplazador;
+	    else
+		// En otro caso, se agrega el caracter original.
+		cadenaModificada += caracter;
 	}
 	return cadenaModificada;
     }
@@ -96,7 +98,7 @@ public class Analizador implements AnalizadorDeCadenas{
 	String cadena3 = "";
 	boolean sonIguales = false;
 
-	for(int i = 0; i<cadenaMinusculas.length(); i++) {
+	for(int i = 0; i < cadenaMinusculas.length(); i++) {
 	    if (cadenaMinusculas.charAt(i) != ' ') {
 		cadena2 += ""+cadenaMinusculas.charAt(i);
 	    }
@@ -128,26 +130,33 @@ public class Analizador implements AnalizadorDeCadenas{
     //ACTIVIDAD 5
     @Override
     public boolean contiene(String cadena, String buscada) {
-	//System.out.println(buscada.charAt(0));
-	boolean siContiene = false;//Variable booleana para saber si lo contiene o no
-	if (cadena.length() < buscada.length()) {//Preguntamos si es que la cadena buscada es mayor que la cadena contenedora
-	    siContiene = false; //si es mayor, entonces no puede estar contenida en otra mas pequena y por lotanto es falso
+	//Variable booleana para saber si lo contiene o no	
+	boolean siContiene = false;
+	//Preguntamos si es que la cadena buscada es mayor que la cadena contenedora.
+	if (cadena.length() < buscada.length()) {
+	    //si es mayor, entonces no puede estar contenida en otra mas pequena y por lotanto es falso
+	    siContiene = false; 
 	    System.out.println("La cadena buscada es mayor!!: ");
-	}else { //Si la cadena a buscar no es mas grande, entonces
-	    for (int i = 0; i<cadena.length(); i+=1) {//Hacemos un ciclo con la longitud de caracteres de la cadena contenedora
-		if(cadena.charAt(i) == buscada.charAt(0)) {//Verificamos si el caracter i-esimo de la cadena contenedora es igual al primer caracter de la cadena a buscar
+	}else {
+	    //Hacemos un ciclo con la longitud de caracteres de la cadena contenedora	    
+	    for (int i = 0; i<cadena.length(); i+=1) {
+		//Verificamos si el caracter i-esimo de la cadena contenedora es igual al primer caracter de la cadena a buscar		
+		if(cadena.charAt(i) == buscada.charAt(0)) {
 		    if (cadena.substring(i).length() < buscada.length()) {
 			siContiene = false;
 			break;
 		    }else {
-			String cadena2 = cadena.substring(i, i + buscada.length());//Si coincide, declaramos otra vairable String local y le asignamos los caracteres de la cadena mayor, desde el caracter que coincidio hasta los que completen la longitud de la cadena buscada
-
-			for(int j = 0; j<buscada.length(); j++){//Hacemos otro for, en este verificamos si todos los caracteres coiniciden
-			    if(cadena2.charAt(j) == buscada.charAt(j)){//Si el i-esimo caracter coincide, entonces la variable siContiene se evalua a verdadero.
+			//Caso contrario, declaramos otra variable String local y le asignamos los caracteres de la cadena mayor, desde el caracter que coincidio hasta los que completen la longitud de la cadena buscada.
+			String cadena2 = cadena.substring(i, i + buscada.length());
+			//Verificamos si todos los caracteres coiniciden
+			for(int j = 0; j<buscada.length(); j++){
+			    //Si el i-esimo caracter coincide, entonces la variable siContiene se evalua a verdadero.			    
+			    if(cadena2.charAt(j) == buscada.charAt(j)){
 				siContiene = true;
-			    }else {//Si no lo contiene, entonces es falso siContiene
-				siContiene = false;//Si un caracter no coincide, la variable siContiene es falsa.
-				break;//Con que un caracter sea falso basta para que las dos cadenas no sean iguales, y hace un break para salir del for
+				// Falso en otro caso.				
+			    }else {
+				siContiene = false;
+				break;
 			    }
 			}
 		    }
@@ -159,7 +168,6 @@ public class Analizador implements AnalizadorDeCadenas{
 
     public static void main(String[] args) {
 	Analizador analizador = new Analizador();
-
 
 	////////// ACTIVIDAD 1//////////////////
 	System.out.println("Posicion: " + analizador.encuentraPosicion("Esta es una palabra de prueba”,",'e'));
