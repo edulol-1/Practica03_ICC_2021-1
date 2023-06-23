@@ -1,3 +1,4 @@
+package src;
 /**
  * Interfaz que define los metodos de
  * un analizador de cadenas.
